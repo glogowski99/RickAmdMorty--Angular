@@ -1,0 +1,39 @@
+<div class="d-flex align-items-center justify-content-start flex-column py-4 home text-white">
+  <h4 class="text-info">{{ character?.name }}</h4>
+  <div class="d-flex align-items-center justify-content-center w-25 h-25 my-5">
+    <img [src]="character.image" class="rounded-3" [alt]="character.name + ' ' + 'image' ">
+  </div>
+  <div class="d-flex">
+    <span class="mx-1 fw-bold text-info">Status:</span>
+    <span
+      [ngClass]="{'text-green': character?.status === 'alive', 'text-red': character?.status === 'dead'}"
+    >
+    {{ character?.status | translate: 'status' }}
+  </span>
+  </div>
+  <div class="d-flex">
+    <span class="mx-1 fw-bold text-info">Rasa:</span>
+    <span> {{ character?.species | translate: 'species' }}</span>
+  </div>
+
+  <div class="d-flex">
+    <span class="mx-1 fw-bold text-info">Płeć:</span>
+    <span>{{ character?.gender | translate:'gender' }}</span>
+  </div>
+  <div class="d-flex">
+    <span class="mx-1 fw-bold text-info">Pochodzenie:</span>
+    <span>{{ character?.origin.name }}</span>
+  </div>
+  <div class="d-flex">
+    <span class="mx-1 fw-bold text-info">Lokalizacja:</span>
+    <span>{{ character?.location.name }}</span>
+  </div>
+  <div class="d-flex">
+    <span class="mx-1 fw-bold text-info">Data utworzenia:</span>
+    <span>{{ character?.created}}</span>
+  </div>
+  <div class="d-flex" *nfIf="character?.type">
+    <span class="mx-1 fw-bold text-info">Typ:</span>
+    <span>{{ character?.type }}</span>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.home{
+  background: rgba(0,0,0,.8);
+  width:100vw;
+  height:100vh;
+}
+.text-green {
+  color: green;
+}
+
+.text-red {
+  color: red;
+}
